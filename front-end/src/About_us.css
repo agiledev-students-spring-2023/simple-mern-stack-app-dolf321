@@ -1,0 +1,10 @@
+.headshot {
+    border-radius: 100%;
+    width: 13rem;
+    height: 13rem;
+}
+
+.description {
+    text-align: center;
+    padding: 0% 30%;
+}
