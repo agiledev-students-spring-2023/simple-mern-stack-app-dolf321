@@ -40,6 +40,25 @@ app.get('/messages', async (req, res) => {
   }
 })
 
+// a route to handle fetching all messages
+app.get('/aboutus', async (req, res) => {
+  // load all messages from database
+  try {
+    // const messages = await Message.find({})
+    res.json({
+      text: 'Hello I am a Class of 2024 Computer Engineering student at New York University Abu Dhabi(NYUAD) focused on creating novel solutions with technology to improve ineffecient industries in the MENA region.',
+      image: '/static/media/headshot.19c50af5526e60edf83b.jpg',
+      status: 'all good',
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve messages from the database',
+    })
+  }
+})
+
 // a route to handle fetching a single message by its id
 app.get('/messages/:messageId', async (req, res) => {
   // load all messages from database
